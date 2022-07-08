@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { GiPowerButton } from "react-icons/gi";
 import './App.css';
-// import Todos  from './components/Todos/data';
 import Navbar from './components/NavBar/navbar';
 import Posts from './components/Posts/posts';
 import Button from './components/button/button';
 import Todo_Class from './components/Todos/data_cls';
+import {DarkTheme} from './components/theme/darktheme';
+import ButtonSwitch from './components/button/button_switch';
 
 function App() {
   const [check, setCheck] = useState(true);
@@ -13,9 +13,9 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <button id="button" type="button" className="btn btn-dark">
-        <GiPowerButton />
-      </button>
+      <DarkTheme>
+        <ButtonSwitch/>
+      </DarkTheme>
       <Button
         style={{
           position: "absolute",
@@ -36,7 +36,7 @@ function App() {
       >
         TODOS (cls)
       </Button>
-      {check == true ? <Todo_Class /> : <Posts />}
+      {check === true ? <Todo_Class /> : <Posts />}
     </div>
   );
 }

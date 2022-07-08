@@ -1,12 +1,21 @@
-import React,{ createContext } from "react"
+import React,{ createContext, useState } from "react";
+import ButtonSwitch from "../button/button_switch";
 
-function DarkTheme() {
+ const ThemeContext = createContext();
 
-    const context = createContext() 
+export const  DarkTheme = ({children})=>{
 
+  const [theme,setTheme] = useState("Dark")
+  const values = {
+    theme,
+    setTheme,
+  }
+  
   return (
-    <div>DarkTheme</div>
-  )
+      <ThemeContext.Provider value={values}>
+        {children}
+      </ThemeContext.Provider>
+  );
 }
 
-export default DarkTheme
+export default ThemeContext
