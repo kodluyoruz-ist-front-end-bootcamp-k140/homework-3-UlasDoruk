@@ -1,11 +1,11 @@
 import { GiPowerButton } from "react-icons/gi";
-import React,{ useContext, useState } from "react";
+import React,{ useContext} from "react";
 import ThemeContext from "../theme/darktheme";
+import "./button.css"
 
 function ButtonSwitch() {
 
-    const {theme,setTheme} = useContext(ThemeContext);
-    // const [theme, setTheme] = useState("Dark");
+  const {theme,setTheme} = useContext(ThemeContext);
 
   return (
     <button

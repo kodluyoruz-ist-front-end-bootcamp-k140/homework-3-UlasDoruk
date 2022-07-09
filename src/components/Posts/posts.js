@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Pagination from "../pagination/pagination";
+import "./style.css";
+import ThemeContext from '../theme/darktheme';
 
 function Posts() {
 
   const [posts,setPosts] = useState([])
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(25);
+  const {theme} = useContext(ThemeContext)
 
 
   const indexOfLastPost = currentPage * postsPerPage;
@@ -33,7 +36,7 @@ function Posts() {
       <React.Fragment>
       {currentPosts.sort((a,b)=>a.id-b.id).map((post,index)=>{
         return (
-          <tr key={index}>
+          <tr className={theme === "Dark" ? "colorwhite" : "colordark"} key={index}>
             <th scope="row">{post.userId}</th>
             <td>{post.id}</td>
             <td>{post.title}</td>
