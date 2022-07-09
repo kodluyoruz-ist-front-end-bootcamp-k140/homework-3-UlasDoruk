@@ -10,13 +10,13 @@ function Posts() {
   const [postsPerPage] = useState(25);
   const {theme} = useContext(ThemeContext)
 
-
+// Pagination için gerekli dataları burdan topluyoruz
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-
+// LoadPost fonksiyonu ile API'dan çektiğimiz dataları useEffect ile yüklüyoruz
   useEffect(()=>{
     loadPosts()
   },[])
@@ -30,7 +30,7 @@ function Posts() {
         console.log(e)
       });
   }
-
+// renderPosts gelen dataları sıralayıp teker teker yazdığımız düzende ekrana yazdırıyor
   const renderPosts = ()=>{
     return (
       <React.Fragment>
@@ -44,7 +44,7 @@ function Posts() {
           )})}
     </React.Fragment>
     )}
-
+// Ana html iskeletinin oluştuğu dataların tablosu  
     const renderTablePosts = ()=>{
       return (
         <table className="table">

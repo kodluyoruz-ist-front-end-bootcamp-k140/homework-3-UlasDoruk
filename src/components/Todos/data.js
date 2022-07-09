@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Pagination from '../pagination/pagination';
 
+// Post.js dosyasındaki işlerin aynısını gerçekleştiriyoruz
+
  function Data() {
    const [todos, setTodos] = useState([]);
    const [currentPage, setCurrentPage] = useState(1);

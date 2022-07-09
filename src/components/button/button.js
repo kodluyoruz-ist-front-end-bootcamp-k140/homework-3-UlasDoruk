@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+// Önceki elementleri ve dataları props olarak geçtik
 function Button({children,...items }) {
   return (
     <>
