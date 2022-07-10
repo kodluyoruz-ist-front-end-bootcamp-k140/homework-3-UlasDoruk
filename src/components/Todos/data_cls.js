@@ -1,9 +1,11 @@
 import React from "react";
+import "./cls.css"
 
 export default class Todo_Class extends React.Component {
   state = {
     items: [],
     todo: null,
+    theme: "Dark"
   };
 
   componentDidMount() {
@@ -25,7 +27,7 @@ export default class Todo_Class extends React.Component {
           .sort((a, b) => a.id - b.id)
           .map((item, i) => {
             return (
-              <tr key={i}>
+              <tr  className={this.props.theme != "Dark" ? "clswhite" : ""} key={i}>
                 <th scope="row">{item.userId}</th>
                 <td>{item.id}</td>
                 <td>{item.title}</td>
