@@ -67,11 +67,13 @@ function Posts() {
       );
     }
 
-  return <>
-  <h1>POSTS</h1>
-  <hr></hr>
-  {renderTablePosts()}
-  </>;
+  return (
+    <>
+      <h1 className={theme === "Dark" ? "colorwhite" : "colordark"}>POSTS</h1>
+      <hr></hr>
+      {renderTablePosts()}
+    </>
+  );
 }
 
 export default Posts

@@ -59,7 +59,7 @@ export default class Todo_Class extends React.Component {
     const { todo } = this.state;
     return (
       <>
-        <h1>TODOS</h1>
+        <h1 className="clswhite">TODOS</h1>
         <hr></hr>
         { this.renderTable()}
       </>
